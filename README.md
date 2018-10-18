@@ -9,3 +9,8 @@ Steps to repro my setup:
   $ npm init to create package.json
 2. $ npm install typescript --save-dev
 3. $ npm install @types/angular --save
+
+There should be a typescript build configuration file, but if there's not create a file "tsconfig.json" with the contents you see in the file in this repo.
+
+To build enter in command line:
+$ node_modules/.bin/tsc
