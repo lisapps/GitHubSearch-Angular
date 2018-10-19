@@ -2,30 +2,38 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<html ng-app="Demo">
+<html ng-app="gitSearchApp">
 <head>
-<title></title>
+<title>Github Public Repo Search</title>
 <meta charset="utf-8" />
 <head>
     <link rel="stylesheet" href="main.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-resource.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.min.js"></script>
-</head>
-<script src="App.js"></script>
-</head>
-<body ng-controller="indexController">
-<h1>My App</h1>
-<!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-<div  class="container wrapper" ng-view>
-    <div class="row">
+    <!--script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-resource.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.min.js"></script>
+    <script src="dist/gitSearchApp.js"></script>
 
+</head>
+
+</head>
+<body>
+    <div class="wrapper">
+    <h1>Github Search</h1>
+        <div ng-controller='SearchController'>
+                            <div>
+                                <input type="text" name="search-git" ng-model="term" on-enter="doSearch()" required>
+                                <span>
+                                    <button type="button" ng-click="doSearch()" >
+                                        <span>Search</span>
+                                    </button>
+                                </span>
+                            </div>
+                            <div ng-repeat="result in results">
+                                    <p>{{result}}</p>
+                            </div>
+        </div>
     </div>
-</div>
+    
 </body>
 </html>
