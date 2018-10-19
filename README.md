@@ -14,3 +14,16 @@ There should be a typescript build configuration file, but if there's not create
 
 To build enter in command line:
 $ node_modules/.bin/tsc
+
+Because this app has multiple files to support MVC instead of having all code in one file, you need to serve the app - not just open index.html in your browser.
+
+To RUN THE FILES AS IS:
+
+1. Make sure you have python installed.
+2. Open your bash/command prompt and navigate to the main "GithubSearch" folder that you cloned. 
+3. Run a simmple python http server. To do this after you have Python installed enter:
+
+$ python -m http.server 8000
+
+4. Go to this url in your browser: http://localhost:8000/
+
