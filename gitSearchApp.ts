@@ -1,20 +1,22 @@
 // Declare app level module
-var gitSearchApp = angular.module('gitSearchApp', ['ngRoute', 'SearchController']);
+var gitSearchApp = angular.module('gitSearchApp', ['ngRoute', 'gitAPI', 'SearchController']);
+
+
 
 gitSearchApp.value('initSearchValue', 'bootstrap');
 
 
-gitSearchApp.factory('gitAPI', ['$http', function($http){
+/* gitSearchApp.factory('gitAPI', ['$http', function($http){
 
     function gitAPI() {
     }
 
-    gitAPI.prototype.searchRepos = function(term, category) {
+    gitAPI.prototype.searchRepos = function(term) {
         return $http.get('https://api.github.com/search/repositories', { params: { q: term } });
     };
 
     return gitAPI;
-}]),
+}]), */
 
 
 angular.module('SearchController', []).controller('SearchController',['$scope', 'gitAPI', 'initSearchValue', function($scope, gitAPI, initSearchValue){
@@ -23,10 +25,11 @@ angular.module('SearchController', []).controller('SearchController',['$scope', 
         $scope.results = [];
 
         var getData = new gitAPI();
+        var baseURL = 'https://api.github.com/search/repositories';
 
         $scope.$watch('term', function() {
 
-            getData.searchRepos($scope.term).then(function successCallback(response) {
+            getData.searchRepos(baseURL, $scope.term).then(function successCallback(response) {
                 $scope.results = response.data;
                 //console.log($scope.results);
                 }, function errorCallback(response) {

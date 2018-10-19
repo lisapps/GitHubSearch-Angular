@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-resource.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.min.js"></script>
     <script src="dist/gitSearchApp.js"></script>
+    <script src="dist/gitAPI.js"></script>
 
 </head>
 
@@ -23,11 +24,6 @@
         <div ng-controller='SearchController'>
                             <div>
                                 <input type="text" name="search-git" ng-model="term" on-enter="doSearch()" required>
-                                <span>
-                                    <button type="button" ng-click="doSearch()" >
-                                        <span>Search</span>
-                                    </button>
-                                </span>
                             </div>
                             <div ng-repeat="result in results">
                                     <p>{{result}}</p>
