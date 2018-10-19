@@ -22,12 +22,12 @@
     <div class="wrapper">
     <h1>Github Search</h1>
         <div ng-controller='SearchController'>
-                            <div>
-                                <input type="text" name="search-git" ng-model="term" on-enter="doSearch()" required>
-                            </div>
-                            <div ng-repeat="result in results">
-                                    <p>{{result}}</p>
-                            </div>
+            <div>
+                <input type="text" name="search-git" ng-model="term" on-enter="doSearch()" required>
+            </div>
+            <div ng-repeat="result in results">
+                <p>{{result.title}}</p>
+            </div>
         </div>
     </div>
     
