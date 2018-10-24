@@ -1,0 +1,35 @@
+<div layout="column" flex>
+
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools">
+      
+    <md-button class="menu md-icon-button" hide-gt-sm aria-label="Show Repos">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <h1>Github Search</h1>
+    <input type="text" name="search-git" ng-model="term" on-enter="doSearch()" required>
+
+  </md-toolbar>
+
+  <!-- Container #2 -->
+  <div flex layout="row">
+
+    <!-- Container #3 -->
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp"
+                md-component-id="left">
+      <!--ms-users-list users="$ctrl.users" selected="$ctrl.selected"
+                     on-selected="$ctrl.selectUser(user)">
+      </ms-users-list-->
+      <ms-repos-list repos="$ctrl.repos" selected="$ctrl.selected_repo" on-selected="$ctrl.selectRepo(repo)"></ms-repos-list>
+
+    </md-sidenav>
+
+    <!-- Container #4 -->
+    <md-content flex id="content">
+      <ms-user-details selected="$ctrl.selected"></ms-user-details>
+      <ms-repo-details selected="$ctrl.repo_selected"></ms-repo-details>
+    </md-content>
+
+  </div>
+
+</div>
