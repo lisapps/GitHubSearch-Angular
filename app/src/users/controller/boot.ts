@@ -9,19 +9,18 @@ import 'angular-messages';
 import 'angular-sanitize';
 
 import {AppComponent} from "../../components/start-app/start-app.component.ts";
-import {UsersListComponent} from "../components/users-list/users-list.component.ts";
 import {ReposListComponent} from "../components/users-list/repos-list.component.ts";
-import {UserDetailsComponent} from "../components/user-details/user-details.component.ts";
+import {RepoDetailsComponent} from "../components/user-details/repo-details.component.ts";
 
 
-import {Users} from '../users.ts';
+//import {Users} from '../users.ts';
 import {Repos} from '../repos.ts';
 
 module searchStart {
   "use strict";
 
   // Register our module and it's dependencies
-  angular.module('myApp', ['ngMaterial', 'ngSanitize', Users.name, Repos.name])
+  angular.module('myApp', ['ngMaterial', 'ngSanitize', Repos.name])
     .config(function ($mdIconProvider:angular.material.IIconProvider, $mdThemingProvider:angular.material.IThemingProvider) {
       // Register the user `avatar` icons
       $mdIconProvider
@@ -40,9 +39,8 @@ module searchStart {
 
     // Register all of our components
     .component(AppComponent.componentName, AppComponent.componentConfig)
-    .component(UsersListComponent.componentName, UsersListComponent.componentConfig)
-    .component(UserDetailsComponent.componentName, UserDetailsComponent.componentConfig)
     .component(ReposListComponent.componentName, ReposListComponent.componentConfig)
+    .component(RepoDetailsComponent.componentName, RepoDetailsComponent.componentConfig)
   ;
 
   

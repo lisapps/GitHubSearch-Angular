@@ -15,15 +15,10 @@ import {IHttpService} from 'angular'
  
 export class ReposDataService {
 
-
     public Repo: object;
 
     constructor(private $http: IHttpService) {
 
-    //     var result = $http.get(this.baseURL, { params: { q: this.term } });
-    //    return result;
-
-  
     }
 
     fetch(term){
@@ -45,7 +40,6 @@ export class ReposDataService {
     this.fetch(term);
     //console.log('result inside loadAllRepos: ' + this.Repo[0]);
     return this.Repo;
-
     
   }
 }

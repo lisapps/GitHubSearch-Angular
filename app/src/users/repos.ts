@@ -16,6 +16,7 @@ export interface Repo {
 
 export module Repos {
   export var name:string = 'Repos';
+  export var searchTerm:string;
 
   angular
     .module(Repos.name, ['ngMaterial'])

@@ -1,4 +1,5 @@
-import {User} from "../../users.ts";
+import {Repo} from "../../repos.ts";
+import { Repo } from "../../repos";
 
 /**
  * User Details Component
@@ -8,32 +9,32 @@ import {User} from "../../users.ts";
  * @constructor
  * @ngInject
  */
-export class UserDetailsComponent {
+export class RepoDetailsComponent {
   // Define our user-details component's name
-  static componentName:string = "msUserDetails";
+  static componentName:string = "msRepoDetails";
 
   // Define our user-details component's component config
   static componentConfig:ng.IComponentOptions = {
     bindings: {
       selected: '<'
     },
-    controller: UserDetailsComponent,
+    controller: RepoDetailsComponent,
     templateUrl: 'src/users/components/user-details/repo-details.component.html'
   };
 
- /*  private selected:User;
+  private selected:Repo;
 
   private $sce:ng.ISCEService;
   private $mdSidenav:angular.material.ISidenavService;
   private $mdDialog:angular.material.IDialogService;
-  private $mdBottomSheet:angular.material.IBottomSheetService;
- */
+  //private $mdBottomSheet:angular.material.IBottomSheetService;
+
   constructor($sce:ng.ISCEService, $mdSidenav:angular.material.ISidenavService,
-              $mdDialog:angular.material.IDialogService, $mdBottomSheet:angular.material.IBottomSheetService) {
+              $mdDialog:angular.material.IDialogService) {
     this.$sce = $sce;
     this.$mdSidenav = $mdSidenav;
     this.$mdDialog = $mdDialog;
-    this.$mdBottomSheet = $mdBottomSheet;
+    //this.$mdBottomSheet = $mdBottomSheet;
   }
 
   /**
@@ -43,16 +44,16 @@ export class UserDetailsComponent {
    */
   share($event:MouseEvent) {
     var self = this;
-    var config:angular.material.IBottomSheetOptions = {
+    /* var config:angular.material.IBottomSheetOptions = {
       parent: angular.element(document.getElementById('content')),
       templateUrl: 'src/users/components/user-details/user-contact-sheet.html',
       controller: UserSheetController,
       controllerAs: "$ctrl",
       bindToController: true,
       targetEvent: $event
-    };
+    }; */
 
-    this.$mdBottomSheet.show(config).then((clickedItem) => {
+   /*  this.$mdBottomSheet.show(config).then((clickedItem) => {
       // Use a fancy TypeScript template string with interpolation
       var html = `<p>You contacted ${self.selected.name} via ${clickedItem.name}!</p>`;
 
@@ -64,12 +65,12 @@ export class UserDetailsComponent {
 
       // Show the alert
       this.$mdDialog.show(alert);
-    });
+    }); */
 
     /**
      * Bottom Sheet controller for the Avatar Actions
      */
-    function UserSheetController() {
+    /* function UserSheetController() {
       this.user = self.selected;
       this.items = [
         {name: 'Phone', icon: 'phone', icon_url: 'assets/svg/phone.svg'},
@@ -80,6 +81,6 @@ export class UserDetailsComponent {
       this.performAction = function (action) {
         self.$mdBottomSheet.hide(action);
       };
-    }
+    } */
   }
 }
