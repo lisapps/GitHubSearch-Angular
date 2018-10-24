@@ -4,7 +4,7 @@
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -80,3 +80,47 @@ span.name {
   font-size: 1.1em;
   padding-left: 5px;
 }
+
+input {
+  padding: 2px 5px;
+  font-size: .8em;
+}
+input::placeholder {
+  color: lightgrey;
+}
+
+h1 {
+  margin-right: 20px!important;
+}
+h2 {
+  display: inherit;
+}
+.material-icons.header__spyglass {
+  padding: 2px 5px;
+
+}
+.md-button {
+  min-height: 28px;
+  min-width: 50px;
+  line-height: 15px;
+}
+
+.style-4::-webkit-scrollbar-track
+{
+	-webkit-box-shadow:  0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.style-4::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.style-4::-webkit-scrollbar-thumb
+{
+	background-color: #333;
+	border: 2px solid #555555;
+}
+
+

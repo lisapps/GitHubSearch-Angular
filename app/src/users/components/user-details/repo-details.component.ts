@@ -31,7 +31,7 @@ export class RepoDetailsComponent {
 
   constructor($sce:ng.ISCEService, $mdSidenav:angular.material.ISidenavService,
               $mdDialog:angular.material.IDialogService) {
-    this.$sce = $sce;
+    //this.$sce = $sce;
     this.$mdSidenav = $mdSidenav;
     this.$mdDialog = $mdDialog;
     //this.$mdBottomSheet = $mdBottomSheet;

@@ -1,5 +1,6 @@
 import {Repo} from "../../users/repos.ts";
 import {ReposDataService} from "../../users/services/repos-data.service.ts";
+import {ISCEService} from 'angular';
 
 
 /**
@@ -22,23 +23,28 @@ export class AppComponent {
 
   // Define our own variables
   private repos:Repo[];
-  private selected:Repo;
   private searchTerm:string = 'bootstrap';
+  private $sce: ISCEService;
+  //private filteredRepo:Repo;
+  private selected:Repo;
 
   // Define our constructor and inject the necessary services
-  constructor($mdSidenav:angular.material.ISidenavService, ReposDataService:ReposDataService) {
+  constructor($mdSidenav:angular.material.ISidenavService, ReposDataService:ReposDataService, $sce: ISCEService, ) {
     // Store all of our injectables
     this.$mdSidenav = $mdSidenav;
     this.ReposDataService = ReposDataService;
-
+    this.$sce = $sce;
 
     // Load our repos and store them to a variable
     ReposDataService.loadAllRepos(this.searchTerm).then((repos:Repo.data.items[]) => {
       this.repos = repos.data.items;
-      this.selected = repos[0];
+      this.selected = this.repos[0];
       //console.log(this.repos);
+
     });
   }
+
+ 
 
   /**
    * Select the current repo
@@ -50,4 +56,12 @@ export class AppComponent {
     // Set our selected repo
     this.selected = angular.isNumber(repo) ? this.repos[<number> repo] : <Repo> repo;
   }
+  doSearch(term) {
+    this.searchTerm = term;
+    this.ReposDataService.loadAllRepos(this.searchTerm).then((repos:Repo.data.items[]) => {
+      this.repos = repos.data.items;
+      this.selected = this.repos[0];
+    console.log('term updated to: ' + term);
+  }
+
 }

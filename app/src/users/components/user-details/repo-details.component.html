@@ -1,8 +1,8 @@
-<md-icon md-svg-src="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
+<img src="{{$ctrl.selected.owner.avatar_url}}" class="avatar"/>
 <h2>{{$ctrl.selected.name}}</h2>
 <p>{{$ctrl.selected.owner.login}}</p>
 <p>{{$ctrl.selected.created_at}}</p>
 <p>{{$ctrl.selected.description}}</p>
 <p>{{$ctrl.selected.watchers}}</p>
+<p>{{$ctrl.selected.url}}</p>
 
-</md-button>

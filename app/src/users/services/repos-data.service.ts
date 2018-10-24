@@ -1,7 +1,7 @@
 import {Repo} from "../repos.ts";
 
 /**
- * Users Data Service
+ * Repos Data Service
  *
  * Uses embedded, hard-coded data model; acts asynchronously to simulate remote data service call(s).
  * Interface/callback is in repos.ts
@@ -12,17 +12,21 @@ import {Repo} from "../repos.ts";
  */
 
 import {IHttpService} from 'angular'
+//import {ISCEService} from 'angular'
+
  
 export class ReposDataService {
 
     public Repo: object;
+    private $sce:ISCEService;
 
     constructor(private $http: IHttpService) {
-
+      //this.$sce = $sce;
     }
 
     fetch(term){
-        this.Repo =  this.$http.get('https://api.github.com/search/repositories', { params: { q: term } });
+      let url = ('https://api.github.com/search/repositories');
+        this.Repo =  this.$http.get(url, { params: { q: term } });
         //console.log('result inside fetch: ' + this.repos);
         return this.Repo;
     }
