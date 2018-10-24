@@ -27,7 +27,6 @@ export class ReposDataService {
     fetch(term){
       let url = ('https://api.github.com/search/repositories');
         this.Repo =  this.$http.get(url, { params: { q: term } });
-        //console.log('result inside fetch: ' + this.repos);
         return this.Repo;
     }
 
@@ -40,9 +39,8 @@ export class ReposDataService {
    * 
    */
   loadAllRepos(term) {
-    // Simulate async nature of real remote calls
+    
     this.fetch(term);
-    //console.log('result inside loadAllRepos: ' + this.Repo[0]);
     return this.Repo;
     
   }

@@ -1,8 +1,9 @@
 <img src="{{$ctrl.selected.owner.avatar_url}}" class="avatar"/>
 <h2>{{$ctrl.selected.name}}</h2>
-<p>{{$ctrl.selected.owner.login}}</p>
-<p>{{$ctrl.selected.created_at}}</p>
-<p>{{$ctrl.selected.description}}</p>
-<p>{{$ctrl.selected.watchers}}</p>
-<p>{{$ctrl.selected.url}}</p>
-
+<div class="details">
+<h3>{{$ctrl.selected.owner.login}}</h3>
+<p><b>Created:</b> {{$ctrl.selected.created_at}}</p>
+<p><b>Description:</b> {{$ctrl.selected.description}}</p>
+<p><b>Watchers:</b> {{$ctrl.selected.watchers}}</p>
+<p><a ng-href="{{$ctrl.selected.html_url}}" target="_blank">{{$ctrl.selected.html_url}}</a> </p>
+</div>

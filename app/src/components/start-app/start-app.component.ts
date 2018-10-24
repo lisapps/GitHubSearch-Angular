@@ -39,7 +39,7 @@ export class AppComponent {
     ReposDataService.loadAllRepos(this.searchTerm).then((repos:Repo.data.items[]) => {
       this.repos = repos.data.items;
       this.selected = this.repos[0];
-      //console.log(this.repos);
+      console.log(this.repos);
 
     });
   }
@@ -61,7 +61,7 @@ export class AppComponent {
     this.ReposDataService.loadAllRepos(this.searchTerm).then((repos:Repo.data.items[]) => {
       this.repos = repos.data.items;
       this.selected = this.repos[0];
-    console.log('term updated to: ' + term);
+    //console.log('term updated to: ' + term);
   }
 
 }
